@@ -10,6 +10,7 @@ router.post('/', (req, res) => {
    const employee = new Employee({
       name: req.body.name,
       email: req.body.email,
+      mobileNo: req.body.mobileNo,
       salary: req.body.salary
    });
    employee.save((err) => {

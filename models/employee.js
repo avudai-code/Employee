@@ -10,6 +10,10 @@ const employeeSchema = new Schema({
       type: String,
       required: true
    },
+   MobileNo:{
+      type: Number,
+      required: true
+   },
    salary: {
       type: Number,
       required: true
