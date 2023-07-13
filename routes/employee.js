@@ -26,5 +26,16 @@ router.get('/', (req, res) => {
     });
  });
  
-
+ router.delete('/:id', (req, res) => {
+   Employee.findByIdAndRemove(req.params.id, (err, employee) => {
+     if (err) {
+       return res.status(500).send("There was a problem deleting the employee.");
+     }
+     if (!employee) {
+       return res.status(404).send("Employee not found.");
+     }
+     res.status(200).send("Employee deleted successfully.");
+   });
+ });
+ 
 module.exports = router;
